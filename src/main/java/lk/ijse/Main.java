@@ -19,7 +19,7 @@ public class Main {
         //open transaction
         Transaction transaction=session.beginTransaction();
 
-        session.save(student);
+        //session.save(student);
         //delete ekai get ekai
         //kohomada thawa table ekk genne
 
@@ -28,15 +28,15 @@ public class Main {
         teacher.setId(1);
         teacher.setName("Piyath");
         teacher.setSalary(10000.00);
+//
+      // session.save(teacher);
+//
+//        session.update(teacher);
+//
+//        session.delete(teacher);
 
-        session.save(teacher);
-
-        session.update(teacher);
-
-        session.delete(teacher);
-
-        session.get("id",Teacher.class);
-        System.out.println(teacher.getId()+teacher.getName()+teacher.getSalary());
+        Teacher teacher1=session.get(Teacher.class,1);
+        System.out.println(teacher1.getId()+teacher1.getName()+teacher1.getSalary());
         transaction.commit();
         session.close();
     }
